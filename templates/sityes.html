@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Цікаві міста України
+    </title>
+    <link href="{{ url_for('static', filename = 'bootstrap.min.css') }}" rel="stylesheet" type="text/css" media="screen">
+    <img src="{{ url_for('static', filename = 'images/2.jpg') }}" width="100%" height="100 px">
+    <a href = "http://127.0.0.1:5000"><img src ="{{url_for("static", filename = "images/home.png") }}" width="10%", height= "10%"></a>
+  </head>
+  <body>
+    <script src="{{ url_for('static', filename = 'bootstrap.min.js') }}"></script>
+    <header>
+      {% for sity in sityes_list %}
+        <h1>{{ sity }}</h1>
+        <p>{{ sityes_list[sity][0] }}</p>
+        <p>{{ sityes_list[sity][1] }}</p>
+        <img src="{{ url_for('static', filename = 'images/' + sityes_list[sity][2]) }}" width= "39%", height= "30%">
+      {% endfor %}
+    </header>
+    <main>
+    </main>
+  </body>
+</html>
