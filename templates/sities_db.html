@@ -14,7 +14,10 @@
     <script src="{{ url_for('static', filename = 'bootstrap.min.js') }}"></script>
     <header>
         {%  for sity in sities %}
-        {{sity}}
+        <h2>{{sity["name"]}}</h2>
+        <h3>{{sity["year_of_creating"]}}</h3>
+        <h4>{{sity["data"]}}</h4>
+        <img src="{{ url_for('static', filename = 'images/'+sity['image']) }}" width="100%" height="300 px">
         {%  endfor %}
     </header>
     <main>
